@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes, faFileCircleCheck, faChalkboardUser,faChartSimple} from "@fortawesome/free-solid-svg-icons";
 
-import '../Styles/Sidebar/Sidebar.css'
+import '../styles/Sidebar/Sidebar.css'
 
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(window.innerWidth >= 1024);
