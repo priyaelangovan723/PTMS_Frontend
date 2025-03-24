@@ -1,0 +1,238 @@
+/* General Styles */
+.filter-content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%; /* Use min-height to ensure it covers the full viewport height */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  
+  .filter-app-container {
+    width: 90vw; /* Use viewport width for better responsiveness */
+    max-width: 1400px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    margin-left: 30px;
+  }
+  
+  /* Navbar Styles */
+  .filter-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .filter-navbar-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .filter-navbar-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .filter-navbar-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #0056b3;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-navbar-buttons button:hover {
+    background-color: #004080;
+  }
+  
+  /* Filters Section */
+  .filter-filters-section {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping if the screen is smaller */
+    gap: 30px; /* Add space between the filter items */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    overflow-x: auto; /* Allow horizontal scrolling if necessary */
+  }
+  
+  .filter-department-item,
+  .filter-cgpa-item,
+  .filter-batch-item,
+  .filter-rank-item,
+  .filter-interest-item {
+    flex: 1 1 calc(33.333% - 20px); /* Each filter takes up 1/3rd of the container on medium screens */
+    min-width: 180px; /* Minimum width for each filter */
+    margin-bottom: 20px; /* Margin for spacing */
+  }
+  
+  .filter-department-label,
+  .filter-cgpa-label,
+  .filter-batch-label,
+  .filter-rank-label,
+  .filter-interest-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .filter-department-select,
+  .filter-cgpa-select,
+  .filter-batch-select,
+  .filter-rank-select,
+  .filter-interest-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  .filter-department-select:focus,
+  .filter-cgpa-select:focus,
+  .filter-batch-select:focus,
+  .filter-rank-select:focus,
+  .filter-interest-select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Table Styles */
+  .filter-table-container {
+    padding: 20px;
+    overflow-x: auto;
+  }
+  
+  .filter-students-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+  }
+  
+  .filter-students-table th,
+  .filter-students-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .filter-students-table th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .filter-students-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Pagination Styles */
+  .filter-pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+  }
+  
+  .filter-pagination button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-pagination button:hover {
+    background-color: #0056b3;
+  }
+  
+  .filter-pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .filter-filters-section {
+      gap: 10px; /* Further reduce gap on smaller screens */
+    }
+  
+    .filter-department-item,
+    .filter-cgpa-item,
+    .filter-batch-item,
+    .filter-rank-item,
+    .filter-interest-item {
+      flex: 1 1 100%; /* Make filter items full width on smaller screens */
+    }
+  
+    .filter-navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .filter-navbar-buttons {
+      margin-top: 10px;
+    }
+  
+    .filter-students-table th,
+    .filter-students-table td {
+      padding: 10px;
+      font-size: 12px;
+    }
+  
+    .filter-pagination button {
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .filter-navbar-title {
+      font-size: 20px;
+    }
+  
+    .filter-navbar-buttons button {
+      padding: 8px 15px;
+      font-size: 12px;
+    }
+  
+    .filter-department-select,
+    .filter-cgpa-select,
+    .filter-batch-select,
+    .filter-rank-select,
+    .filter-interest-select {
+      font-size: 12px;
+    }
+  
+    .filter-students-table th,
+    .filter-students-table td {
+      padding: 8px;
+      font-size: 12px;
+    }
+  
+    .filter-pagination button {
+      padding: 8px 10px;
+      font-size: 12px;
+    }
+  }

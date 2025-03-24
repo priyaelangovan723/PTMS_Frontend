@@ -1,0 +1,84 @@
+.active {
+    height: 20px;
+    width: 170px;
+    background-color: green;
+    color: white;
+    
+}
+h5{
+    font-size: larger;
+}
+.completed {
+    height: 20px;
+    width: 80px;
+    background-color:rgb(14,120,220) ;
+    color: white;
+}
+
+.pending1{
+    height: 20px;
+    width: 80px;
+    background-color:#ffaa33 ;
+    color: white;
+}
+.dwnld-btn{
+    margin-top: 20px;
+    background-color:rgb(14,120,220) ;
+    color: white;
+    height: 30px;
+    width: 175px;
+    border-radius: 10px;
+    border: none;
+}
+
+.low-attendance {
+    background-color: rgb(238, 84, 84);
+    color: white;
+    
+}
+
+.green {
+    background-color: green;
+    color: white;
+}
+
+.attendance-reports{
+    height: 75px;
+    width: 200px;
+    margin-left: 250px;
+    
+}
+.assessment-reports{
+    height: 75px;
+    width: 200px;
+    
+    
+}
+@media (max-width: 768px) {
+    .attendance-reports, .assessment-reports {
+        width: 90%; /* Adapt to screen width */
+        max-width: 300px; /* Limit max width */
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -30px;
+    }
+}
+
+
+.reports{
+    height: 75px;
+    width: 125 rex;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+}
+
+@media (max-width: 768px) {
+    .reports {
+        width: 90%; /* Adapts to smaller screens */
+        flex-direction: column; /* Stacks elements vertically */
+        height: auto; /* Allow flexible height */
+    }
+}

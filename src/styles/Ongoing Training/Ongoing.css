@@ -1,0 +1,97 @@
+.dashboard-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: none; /* Light background */
+  width: 60%;
+  margin-left: 50px; /* Pushes it to the right */
+
+}
+
+
+.section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 20px;
+  justify-content: center; /* Ensures proper alignment */
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  height: 150px;
+  max-width: 400px; /* Prevents excessive stretching */
+  width: 100%; /* Makes it responsive */
+  margin: 0 auto; /* Centers cards in a row */
+  border: 1px solid #eaeaea;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+.icon {
+  font-size: 50px;
+}
+
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #1967d2;
+  color: white;
+}
+
+.description {
+  text-align: center;
+  line-height: 1rem;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .card {
+      width: 90%; /* Cards take more width on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .icon {
+      font-size: 40px; /* Slightly smaller icons */
+      margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+      height: auto; /* Allows content to adjust height */
+      padding: 20px;
+  }
+  .icon {
+      font-size: 35px;
+      margin-top: 20px;
+  }
+}

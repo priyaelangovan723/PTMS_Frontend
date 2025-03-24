@@ -1,0 +1,382 @@
+*{
+  box-sizing: content-box;
+
+}
+
+.main-container{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* column-gap: 75px; */
+  font-family: 'Roboto',sans-serif;
+  background-color: aliceblue;
+  overflow-x: hidden;
+}
+
+
+.content-container{
+
+  background-color: aliceblue;
+  min-height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  padding-left: 50px;
+  padding-top: 80px;
+  overflow: hidden;
+
+}
+
+.contents{
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap if needed */
+  gap: 30px; /* Adjust spacing */
+  justify-content: center; /* Centers cards properly */
+  width: 100%; /* Makes sure it takes full space */
+  max-width: 1200px;
+  margin: auto;/* Prevents over-expansion */
+}
+.content-card{
+  flex: 7; /* Makes it responsive */
+  min-width: 300px;
+  max-width: 1500px;
+
+  height: auto;
+  background-color:white;
+  border-radius: 10px;
+  box-shadow: 1rem;
+  display: flex;
+  row-gap: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  box-shadow: 5px white;
+  border:1px solid aliceblue;
+}
+.name{
+  font-size: 20px;
+  color: lightslategray;
+  margin-bottom: 10px;
+  display: inline;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+#short-text{
+  display: inline-block;
+}
+.add-request{
+  background-color:rgb(14,120,220);
+  height: 50px;
+  width: 250px;
+  margin-top: 1.3%;
+  float: inline-end;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 20px;
+  color: white;
+  border-radius: 15px;
+
+}
+.add-request2{
+  background-color:rgb(14,120,220);
+  width: 250px;
+  height: 50px;
+  margin-top: 1.3%;
+  /* margin-left:auto;*/
+  margin-right:50px;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  border: none;
+  color: white;
+  border-radius: 15px;
+  text-align:center;
+  cursor: pointer;
+
+}
+.plus-icon{
+  font-size: 30px;
+  color: white;
+  margin-left: 20px;
+
+}
+#request{
+  color: white;
+  font-size: 20px;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#request2{
+  color: white;
+  font-size: 20px;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-request :hover {
+  cursor: pointer;
+}
+.add-request2 :hover {
+  cursor: pointer;
+}
+
+
+
+.logout{
+  margin-top: 510px;
+
+}
+
+.text {
+  font-size: 20px;
+}
+
+.logout-icon{
+  font-size: 30px;
+  margin-top: 15px;
+  margin-left: 0px;
+
+}
+
+@media only screen and (max-width: 1068px) {
+
+  .add-request{
+    width: 250px;
+    float: inline-end;
+
+  }
+  .add-request2{
+    width: 250px;
+    float: inline-end;
+
+  }
+  .plus-icon{
+    font-size: 25px;
+    margin-left: 10px;
+  }
+  #request{
+    font-size: 17px;
+  }
+  #request2{
+    font-size: 17px;
+  }
+}
+
+
+/* Media Queries for Responsiveness */
+@media only screen and (max-width: 1200px) {
+  .main-container {
+      flex-direction: column;
+      padding: 20px;
+  }
+
+
+
+  .content-container {
+      padding: 30px;
+  }
+
+  .contents {
+      flex-direction: column;
+      align-items: center;
+      width: 85%;
+  }
+
+  .content-card {
+      width: 90%;
+      height: auto;
+  }
+
+  .add-request {
+      float: inline-end;
+      margin-right: 45px;
+      justify-content: center;
+      margin-top: 30px;
+  }
+  .add-request2 {
+    float: inline-end;
+    margin-right: 45px;
+    justify-content: center;
+    margin-top: 30px;
+}
+}
+
+@media only screen and (max-width: 768px) {
+  .main-container {
+      flex-direction: column;
+      padding: 10px;
+  }
+
+
+
+
+
+  .contents {
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      padding: 10px;
+  }
+
+  .content-card {
+      width: 90%;
+      height: auto;
+  }
+
+  .add-request {
+      float: inline-end;
+      margin-right: 50px;
+      justify-content: center;
+      width: 250px;
+  }
+  .add-request2 {
+    float: inline-end;
+    margin-right: 50px;
+    justify-content: center;
+    width: 250px;
+}
+
+  #request {
+      font-size: 16px;
+  }
+  #request2 {
+    font-size: 16px;
+}
+}
+
+@media only screen and (max-width: 480px) {
+  .main-container {
+      flex-direction: column;
+      padding: 5px;
+      padding-right: 10px;
+  }
+
+  .side-container {
+      width: 100%;
+      height: auto;
+  }
+
+  .dashboard {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .content-container {
+      padding: 20px;
+      padding-top: 80px;
+  }
+
+  .contents {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .content-card {
+      width: 85%;
+      height: auto;
+  }
+
+  .add-request {
+      float: inline-end;
+      margin-right: 25px;
+      justify-content: center;
+      width: 200px;
+      height: 35px;
+  }
+  .add-request2 {
+    float: inline-end;
+    margin-right: 25px;
+    justify-content: center;
+    width: 200px;
+    height: 35px;
+}
+
+  #request {
+      font-size: 15px;
+  }
+  #request2 {
+    font-size: 15px;
+}
+
+  .plus-icon{
+    font-size: 20px;
+  }
+
+  .name{
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .main-container {
+      flex-direction: column;
+      padding: 5px;
+  }
+
+  .side-container {
+      width: 100%;
+      height: auto;
+  }
+
+  .dashboard {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .content-container {
+      padding: 20px;
+      padding-top: 80px;
+  }
+
+  .contents {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .content-card {
+      width: 60%;
+      height: auto;
+  }
+
+  .add-request {
+      float: inline-end;
+      margin-right: 25px;
+      justify-content: center;
+      width: 180px;
+
+      column-gap: 5px;
+  }
+
+  #request {
+      font-size: 15px;
+  }
+  .add-request2 {
+    float: inline-end;
+    margin-right: 25px;
+    justify-content: center;
+    width: 180px;
+
+    column-gap: 5px;
+}
+
+#request2 {
+    font-size: 15px;
+}
+  .plus-icon{
+    font-size: 20px;
+
+  }
+
+  .name{
+    font-size: 12px;
+  }
+}

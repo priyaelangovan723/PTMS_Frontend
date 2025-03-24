@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: aliceblue;
+  padding: 20px;
+}
+
+.signin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+
+  max-width: 400px;
+  padding: 20px;
+  border: 3px solid white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  color: grey;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+}
+
+.signin-container h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.custom-signin-button {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-signin-button:hover {
+  background-color: #3c78d8;
+}
+
+.admin-button {
+  background-color: white;
+  color: black;
+  border: 0.5px solid lightgray;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  height: 40px;
+  width: 70px;
+  transition: background-color 0.3s ease;
+}
+
+.admin-button:hover {
+  background-color: aliceblue;
+  border-color: lightblue;
+}
+
+.spacer {
+  height: 50px;
+}
+
+@media (max-width: 600px) {
+  .signin-container {
+    width: 100%;
+    padding: 15px;
+  }
+}

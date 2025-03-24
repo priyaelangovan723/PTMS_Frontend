@@ -1,0 +1,154 @@
+.status-admin{
+    height: 42px;
+    width: 150px;
+    background-color:none;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 0px;
+    justify-content: space-evenly;
+}
+.approve{
+    color: white;
+    outline: none;
+    background-color: rgb(14,120,220);
+    border: none;
+    border-radius: 5px;
+    width: 60px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.reject{
+    color: white;
+    outline: none;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    width: 60px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+  
+  .table1-container {
+   
+   
+    overflow-y: auto; 
+    background-color: white;
+    border-radius: 10px;
+   
+    
+}
+
+.table-wrapper{
+  overflow-x: scroll;
+ 
+}
+
+  
+  table {
+    /* max-width: 100%; */
+    border-collapse: collapse;
+    min-width: max-content;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    margin-bottom: 10px;
+    
+  }
+  
+  th {
+    
+    background-color: none;
+  }
+
+.status-approved{
+    height: 30px;
+    width: 150px;
+    background-color: rgb(14,120,220);
+    text-align: center;
+    
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.status-approved p {
+   
+    margin-top: 5px;
+}
+
+.status-rejected{
+    height: 30px;
+    width: 150px;
+    background-color: red;
+    text-align: center;
+    
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.status-rejected p {
+    
+    margin-top: 5px;
+}
+
+.search-bar input{
+  height: 30px;
+  width: 250px;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+  margin-bottom: 0px;
+  margin-left: 1px;
+}
+
+.search-bar{
+  height: 32px;
+  width: 300px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25px;
+  align-items: center;
+  border-radius: 7px;
+  column-gap: 5px;
+  justify-content: space-evenly;
+}
+
+#remarks{
+  height: 40px;
+  width: 200px;
+  outline: none;
+  color: lightslategray;
+  border: 1px solid lightslategray;
+  border-radius: 7px;
+}
+
+.view-icon{
+  height: 20px;
+  width: 10px;
+  outline: none;
+  background-color: white;
+  border: none;
+  color: lightslategray;
+}
+
+.view-icon:hover{
+  cursor: pointer;
+  color: rgb(14,120,220);
+}
+
+#submit-btn{
+  outline: none;
+  height: 25px;
+  background-color: rgb(14,120,220);
+  width: 45px;
+  color: white;
+  border: none;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+

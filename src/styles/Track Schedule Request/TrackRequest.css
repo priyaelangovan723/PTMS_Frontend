@@ -1,0 +1,205 @@
+.approved{
+    height: 30px;
+    width: 80px;
+    background-color: rgb(14,120,220);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0px;
+    
+}
+
+#status-text{
+    color:white;
+    text-rendering:optimizeLegibility;
+
+}
+
+.rejected{
+    height: 30px;
+    width: 80px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0px;
+    
+}
+
+.pending{
+    height: 30px;
+    width: 80px;
+    background-color: #ffaa33;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0px;
+}
+
+.view-icon{
+    height: 0px;
+    width: 10px;
+    outline: none;
+    background-color: white;
+    border: none;
+    color: lightslategray;
+    font-size: 16px;
+  }
+  
+  .view-icon:hover{
+    cursor: pointer;
+    color: rgb(14,120,220);
+  }
+
+  .search-bar input{
+    height: 30px;
+    width: 250px;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    margin-bottom: 0px;
+    margin-left: 1px;
+  }
+  
+  .search-bar{
+    height: 32px;
+    width: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
+    align-items: center;
+    border-radius: 7px;
+    column-gap: 5px;
+    justify-content: space-evenly;
+  }
+
+  .table1-container {
+   
+   
+    overflow-y: auto; 
+    background-color: white;
+    border-radius: 10px;
+   
+    
+}
+
+.table-wrapper{
+    overflow-x: scroll;
+    
+  }
+
+  .pagination{
+    height: 40px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .prev,.next{
+    margin: 10px;
+    background-color: white;
+    border: none;
+    color:rgb(14,120,220) ;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  .disabled{
+    margin: 10px;
+    background-color: white;
+    border: none;
+    color:lightslategray;
+    font-size: 15px;
+    cursor: not-allowed;
+  }
+  
+  .prev:hover{
+    opacity: 0.8;
+  
+  }
+  .next:hover{
+    opacity: 0.8;
+  }
+  
+  .total-pages{
+    color: lightslategray;
+    font-size: 14px;
+  }
+
+  table {
+    max-width: 100%;
+    border-collapse: collapse;
+    min-width: max-content;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    margin-bottom: 10px;
+    
+   
+    
+  }
+  
+  th {
+    
+    background-color: none;
+  }
+
+  /* 📌 Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+    /* Make table horizontally scrollable */
+    .approved, .rejected, .pending {
+        height: 25px;
+        width:73px;
+        text-align: center;
+        margin-bottom: 0;
+      }
+      
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+   .pagination{
+     width: 93%;
+   }
+
+    /* Ensure last column is visible */
+    td:last-child, th:last-child {
+        min-width: 170px; /* Adjust based on your content */
+        
+    }
+
+    h1{
+        font-size: 1.3rem;
+        margin-right: 1.5rem;
+    }
+
+   
+  
+}
+
+@media (max-width: 1024px){
+    td:last-child, th:last-child {
+        min-width: 170px; /* Adjust based on your content */
+        
+    }
+
+    .pagination {
+        width: 93%;
+    }
+}
