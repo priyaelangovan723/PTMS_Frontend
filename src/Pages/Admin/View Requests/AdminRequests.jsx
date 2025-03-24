@@ -8,6 +8,7 @@ import '../../../styles/Track Schedule Request/TrackRequest.css'
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
+import { LinearProgress } from "@mui/material";
 
 const AdminRequests = () => {
     const navigate = useNavigate()
@@ -17,6 +18,7 @@ const AdminRequests = () => {
     const [searchValue, setSearchValue] = useState('');
     const [remarksValue, setRemarksValue] = useState({});
     const [selectedRequestId, setSelectedRequestId] = useState(null);
+    const [loading, setloading] = useState(true);
     const itemsPerPage = 10;
     // Get logged-in admin email from session storage or state
     const adminEmail = JSON.parse(localStorage.getItem("userData"))?.email;
@@ -28,6 +30,7 @@ const AdminRequests = () => {
             axios.get(`https://ptms-backend.onrender.com/admins/${adminEmail}`)
                 .then(response => {
                     setRequests(response.data);
+                    setloading(false);
                 })
                 .catch(error => {
                     console.error("Error fetching training requests:", error);
@@ -82,9 +85,11 @@ const AdminRequests = () => {
                 {
                     pending: "Updating request...",
                     success: "Request rejected successfully! ❌",
-                    error: "Failed to reject request ❌"
+                    error: "Failed to reject request ❌",
+                    
                 }
-            );
+               
+            ).then(() => window.location.reload());
 
             const updatedRequests = requests.map(request =>
                 request['ID'] === id ? { ...request, "RequestStatus": "Rejected", "Remarks": updatedRemark } : request
@@ -140,6 +145,7 @@ const AdminRequests = () => {
                     <input placeholder="Search here" onChange={searchfn} value={searchValue}></input>
                 </div>
                 <div className="table1-container">
+                 {loading && <LinearProgress />}
                     <div className="table-wrapper">
                         <table>
                             <thead>

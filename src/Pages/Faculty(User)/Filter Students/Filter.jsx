@@ -3,10 +3,11 @@ import "../../../styles/Filter Students/Filter.css";
 import * as XLSX from "xlsx";
 import '../../../styles/Faculty Dashboard/Dashboard.css';
 import '../../../styles/Track Schedule Request/TrackRequest.css'
+import { LinearProgress } from "@mui/material";
 
 const Filter = () => {
     
-  
+  const [loading, setloading] = useState(true);
 
     const [selectedDepartment, setSelectedDepartment] = useState("");
     const [selectedCGPA, setSelectedCGPA] = useState("");
@@ -19,12 +20,12 @@ const Filter = () => {
             .then(response => response.json())
             .then(data => {
                 setStudents(data);
-                setLoading(false);
+                setloading(false);
             })
             .catch(error => {
                 console.error("Error fetching student data:", error);
                 setError("Failed to load students");
-                setLoading(false);
+                setloading(false);
             });
     }, []);
 
@@ -162,6 +163,7 @@ const Filter = () => {
 
                 {/* Filtered Students Table */}
                 <div className="filter-table-container">
+                     {loading && <LinearProgress />}
                     <table className="filter-students-table">
                         <thead>
                             <tr>
@@ -173,6 +175,7 @@ const Filter = () => {
                                 <th>Batch</th>
                                 <th>Interest</th>
                                 <th>Email ID</th>
+                                <th>Github</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -186,6 +189,7 @@ const Filter = () => {
                                     <td>{student.batch}</td>
                                     <td>{student.interest}</td>
                                     <td>{student.email}</td>
+                                    <td>{student.GitHub}</td>
                                 </tr>
                             ))}
                         </tbody>

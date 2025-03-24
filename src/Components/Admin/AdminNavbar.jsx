@@ -67,7 +67,7 @@ const Sidebar = () => {
                 </Link>
                 <br></br>
 
-                <Link to="/admin/Ongoing">
+                {/* <Link to="/admin/Ongoing">
                     <div className={`dashboard ${selectedItem === 'ongoing' ? 'selected' : ''}`} onClick={() => handleItemClick('ongoing')}>
                         <div className="dashboard-heading"><p><b>Ongoing</b></p></div>
                         <FontAwesomeIcon className="logo2" icon={faChalkboardUser} />
@@ -85,7 +85,7 @@ const Sidebar = () => {
                             <FontAwesomeIcon icon={faChartSimple} />
                         </div>
                     </div>
-                </Link>
+                </Link> */}
             </div>
         </>
     );
