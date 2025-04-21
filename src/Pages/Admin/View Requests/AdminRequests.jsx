@@ -84,8 +84,8 @@ const AdminRequests = () => {
                 }),
                 {
                     pending: "Updating request...",
-                    success: "Request rejected successfully! ❌",
-                    error: "Failed to reject request ❌",
+                    success: "Request rejected successfully! ",
+                    error: "Failed to reject request ",
                     
                 }
                

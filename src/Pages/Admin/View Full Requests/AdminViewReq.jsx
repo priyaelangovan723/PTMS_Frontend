@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
-import { LinearProgress } from "@mui/material";
 
 const AdminViewReq = () => {
     const location = useLocation();
@@ -18,8 +17,7 @@ const AdminViewReq = () => {
     const [isDropdownVisible, setDropdownVisible] = useState(false);
     const [selectedVenue, setSelectedVenue] = useState(null);
     const [updatedVenue, setUpdatedVenue] = useState("");
-    const [emails, setEmails] = useState([]);
-    const [loading, setloading] = useState(true);
+    const [emails, setEmails] = useState(["ragul.se21@bitsathy.ac.in","santhosh.se21@bitsathy.ac.in"]);
     const adminEmail = JSON.parse(localStorage.getItem("userData"))?.email;
     console.log(adminEmail)
     const handleEditClick = () => {
@@ -53,8 +51,7 @@ const AdminViewReq = () => {
         try {
             const response = await axios.get(`https://ptms-backend.onrender.com/admins/${adminEmail}`);
             setRequestDetails(response.data);
-            setSelectedVenue(response.data["VenueDetails"]);
-            setloading(false);
+            setSelectedVenue(response.data["Venue Details"]);
 
             // Ensure requestDetails is available before fetching responses
             if (response.data.length > 0) {
@@ -74,7 +71,7 @@ const AdminViewReq = () => {
                 console.log("Emails:", data.data);
             }
         } catch (error) {
-            toast.error("Error fetching emails:", error);
+            console.error("Error fetching emails:", error);
         }
     };
 
@@ -87,16 +84,16 @@ const AdminViewReq = () => {
                 toast.error("Invalid training ID or venue", { autoClose: 3000 });
                 return;
             }
-            setloading(true);
+    
             const response = await axios.post(`https://ptms-backend.onrender.com/emails/venue-update-emails/${trainingId}`, {
                 venueDetails: selectedVenue,
                 emails: emails,
             });
-            setloading(false);
+            console.log(emails);
             console.log(response.data);
             toast.success("Venue updated & emails sent!", {
                 autoClose: 4000, // Stay for 4 seconds
-                onClose: () => window.location.reload(), // Update state after toast closes
+                onClose: () => setSelectedVenue(updatedVenue), // Update state after toast closes
             });
         } catch (error) {
             console.error("Error updating venue:", error);
@@ -104,18 +101,16 @@ const AdminViewReq = () => {
         }
     };
 
-    if(!requestDetails){
-        return
+    if (!requestDetails) {
+        return <div>Loading request details...</div>;
     }
 
     return (
         <>
             <div className="content-container1">
-            {loading && <LinearProgress />}
                 <ToastContainer/>
                 <h1>View Full Requests</h1>
                 <div className="card-container1">
-                 
                     <div className="card1">
                         <h2>{requestDetails[0].Title}</h2>
                         <p><strong>ID:</strong> {requestDetails[0].ID}</p>
@@ -145,7 +140,7 @@ const AdminViewReq = () => {
                                     <option value="ECE Seminar Hall">ECE Seminar Hall</option>
                                     <option value="BIT Auditorium">BIT Auditorium</option>
                                 </select>
-                                <button className="form-btn" onClick={handleSubmit}>Change Details</button>
+                                <button type="button" className="form-btn" onClick={handleSubmit}>Change Details</button>
                             </div>
                         )}
                         <p><strong>Request Status:</strong> {requestDetails[0]["RequestStatus"]}</p>
